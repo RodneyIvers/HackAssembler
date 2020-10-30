@@ -1,0 +1,52 @@
+Assembler Instructions
+
+Step 1: 
+	Create instruction class
+
+Step 2: 
+	Create buildLookupTables function  (define the HACK Lexicon)
+		Build 3 C-Instruction Tables 
+		a. computations(bits 11-6)
+		b. destinations(bits 5-3)
+		c. jumps(bits(2-0)
+
+Step 3:
+	Create lbl_sym class, Line 11
+		Add loop to buildLookupTables funtion to create R0-R15 symbols to table, Line 301
+		Symbols are user defined variables, e.g. @x which is allocated at the next location on 
+			the symbol table
+		Labels are the target of jump instructions, e.g. (LOOP)
+
+Step 4:
+	Create binHex class, Line 48
+		//Add binHex definitions to buildLookupTables function, Line 371
+	Add bin2Hex Map
+
+Step 5:
+	In main, call buildLookupTables, Line 94
+	Get input file name
+	Open input file
+	Get output file name
+
+Step 6: (PASS 1)
+	This pass does basic clean up, saving just valid instructions to the instructions vector
+
+	Create while loop to read data from file
+	Look for comments and clean them out
+	Look for blank lines and ignore them
+	Look for first character (, which indicates a label instruction
+	Add instruction to instruction vector
+	Increment lineCount
+	Close input file
+
+Step 7: (PASS 2)
+	This pass processes all the instructions in the instructions vector
+
+	Create for loop to process instructions
+	Get first character
+	Get remainder of string
+	Check first character for @, which indicates an A instruction
+	Check for pre-existing symbol (variable name)
+	If not add symbol to table
+
+	...
