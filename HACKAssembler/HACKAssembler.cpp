@@ -99,6 +99,14 @@ int main(int argc, char* argv[])
 	{
 
 		//Prep for 110320
+		if (inst.substr(0, 1) == "@")
+		{
+			//A Instruction
+		}
+		else
+		{
+			//C Instruction
+		}
 
 	}//end of FOR loop
 }	//end of program
