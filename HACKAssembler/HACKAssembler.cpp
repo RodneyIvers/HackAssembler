@@ -98,7 +98,7 @@ int main(int argc, char* argv[])
 	for (string inst : instructions)
 	{
 
-		//Original 102920
+		//Prep for 110320
 
 	}//end of FOR loop
 }	//end of program
